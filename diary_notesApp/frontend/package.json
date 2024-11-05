@@ -15,8 +15,9 @@
         "redux": "latest"
     },
     "devDependencies": {
+        "axios": "0.21.1",
+        "eslint": "latest",
         "webpack": "5.59.1",
-        "eslint": "7.32.0",
         "react": "latest"
     },
     "browserslist": {

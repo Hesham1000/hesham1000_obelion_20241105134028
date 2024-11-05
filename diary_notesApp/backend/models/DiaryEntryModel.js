@@ -1,10 +1,10 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('diary_notesApp', 'root', 'root', {
+const sequelize = new Sequelize('None', 'root', 'root', {
   host: 'db',
   port: 3306,
   dialect: 'mysql',
-  logging: false,
+  logging: false
 });
 
 class DiaryEntry extends Model {}
@@ -12,28 +12,27 @@ class DiaryEntry extends Model {}
 DiaryEntry.init({
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
     primaryKey: true,
+    autoIncrement: true
   },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
-    },
+      notEmpty: true
+    }
   },
   content: {
     type: DataTypes.TEXT,
     allowNull: false,
     validate: {
-      notEmpty: true,
-    },
-  },
-}, {
-  sequelize,
+      notEmpty: true
+    }
+  }
+}, { 
+  sequelize, 
   modelName: 'DiaryEntry',
-  tableName: 'DiaryEntries',
-  timestamps: false,
+  timestamps: false 
 });
 
 module.exports = DiaryEntry;
